@@ -1,0 +1,29 @@
+package com.java.leituradados;
+
+import java.util.Scanner;
+
+public class NumeroParOuImpar {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite o número: ");
+		int numero1 = sc.nextInt();
+		System.out.println("Digite o segundo número: ");
+		int numero2 = sc.nextInt();
+		
+		int soma = numero1 + numero2;
+		
+		System.out.println("O resultado da soma dos números é: " + soma);
+		
+		int resto = soma % 2;
+		
+		if(resto == 0) {
+			System.out.println("A soma é par");
+		}else {
+			System.out.println("A soma é ímpar");
+		}
+		sc.close();
+	}
+
+}
