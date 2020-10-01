@@ -1,12 +1,24 @@
 package com.java;
 
-public class Conta2 {
+import java.io.Serializable;
+
+/**
+ * Classe que abstrai uma conta bancária
+ * @author gabriel
+ * @version 1.0
+ */
+
+public class Conta2 implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int numero;	
+	private int agencia;
+	private double saldo;
 	
-	//ATRIBUTOS
-	int numero, agencia;
-	double saldo;
 	
-	//CONTRUTORES
 	public Conta2() {
 		
 	}
@@ -17,16 +29,46 @@ public class Conta2 {
 		this.saldo = saldo;
 	}
 	
-	//MÉTODOS
-	public void depositar(double saldo) {
-		this.saldo += saldo;
+	
+	
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public int getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+
+	/**
+	 * Acrecenta valor ao Saldo da Conta
+	 * @param valor que será depositado
+	 */
+	public void depositar(double valor) {
+		this.saldo += valor;
 	}
 	
-	public void retirar(double saldo) {
-		this.saldo -= saldo;
+	/**
+	 * Retira um valor do saldo da Conta
+	 * @param valor que será retirado
+	 * @see depositar
+	 */
+	public void retirar(double valor) {
+		this.saldo -= valor;
 	}
 	
-	public double verificarSaldo() {
+	/**
+	 * Verifica o Saldo da Conta
+	 * @return valor do saldo da conta
+	 */
+	public double getSaldo() {
 		return saldo;
 	}
 	
